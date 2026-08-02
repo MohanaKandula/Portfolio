@@ -35,7 +35,7 @@ const Navbar = ({ onEmailClick }) => {
         {/* Left Side: Logo/Name */}
         <div className="flex items-center">
           <a href="#" className="text-white text-2xl font-black tracking-tight whitespace-nowrap">
-            {personalInfo.brandName}<span className="text-red-500">.</span>
+            {personalInfo.brandName}
           </a>
         </div>
 
