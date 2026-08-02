@@ -44,9 +44,9 @@ const Preloader = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 w-full h-screen bg-[#ff2a2a] z-[100000] flex flex-col items-center justify-center overflow-hidden font-sans"
+          className="fixed inset-0 w-full h-screen bg-[#0a0a0a] z-[100000] flex flex-col items-center justify-center overflow-hidden font-sans"
         >
-          {/* Inject self-contained style rules for the floating white particle canvas */}
+          {/* Inject self-contained style rules for the floating red/rose particle canvas */}
           <style>{`
             @keyframes preloader-float {
               0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
@@ -56,14 +56,14 @@ const Preloader = () => {
             .preloader-particle {
               position: absolute;
               bottom: 0;
-              background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+              background: radial-gradient(circle, rgba(255,42,42,0.15) 0%, transparent 70%);
               border-radius: 50%;
               pointer-events: none;
               animation: preloader-float infinite linear;
             }
           `}</style>
 
-          {/* Gentle white particle background */}
+          {/* Gentle red/rose particle background */}
           {!reducedMotion && particles.map((p, i) => (
             <div
               key={i}
@@ -78,11 +78,11 @@ const Preloader = () => {
             />
           ))}
 
-          {/* Soft background white blur glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/[0.05] rounded-full blur-[80px] pointer-events-none z-0" />
+          {/* Soft background red blur glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-red-500/[0.03] rounded-full blur-[80px] pointer-events-none z-0" />
 
-          {/* Text Container with White Glassmorphism Card backing */}
-          <div className="relative z-10 bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-3xl p-8 md:p-12 text-center max-w-2xl mx-6 shadow-2xl flex flex-col items-center">
+          {/* Text Container with Glassmorphism Card backing */}
+          <div className="relative z-10 bg-white/[0.01] backdrop-blur-md border border-white/[0.04] rounded-3xl p-8 md:p-12 text-center max-w-2xl mx-6 shadow-2xl flex flex-col items-center">
             
             {/* Character-by-character text reveal */}
             <h1 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight flex flex-wrap justify-center whitespace-nowrap">
@@ -111,7 +111,7 @@ const Preloader = () => {
                 duration: 0.7,
                 ease: "easeInOut"
               }}
-              className="h-[2px] bg-white mt-4 shadow-[0_0_8px_rgba(255,255,255,0.4)] w-full"
+              className="h-[2px] bg-[#ff2a2a] mt-4 shadow-[0_0_8px_rgba(255,42,42,0.4)] w-full"
             />
 
             {/* Role & Tech stack reveal */}
@@ -125,10 +125,10 @@ const Preloader = () => {
               }}
               className="mt-6 flex flex-col items-center"
             >
-              <div className="text-xs md:text-sm font-semibold tracking-[0.25em] text-white uppercase mb-2">
+              <div className="text-xs md:text-sm font-semibold tracking-[0.25em] text-[#ff2a2a] uppercase mb-2">
                 Software Engineer
               </div>
-              <div className="text-[10px] md:text-xs font-semibold font-mono tracking-wider text-white/70 uppercase">
+              <div className="text-[10px] md:text-xs font-semibold font-mono tracking-wider text-white/50 uppercase">
                 Java • Spring Boot • React
               </div>
             </motion.div>
@@ -140,7 +140,7 @@ const Preloader = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.3 }}
             onClick={() => setIsLoading(false)}
-            className="absolute bottom-10 text-[10px] font-mono font-bold tracking-wider text-white/50 hover:text-white/80 border border-white/20 hover:border-white/40 rounded-full px-4 py-2 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
+            className="absolute bottom-10 text-[10px] font-mono font-bold tracking-wider text-white/35 hover:text-white/70 border border-white/10 hover:border-white/20 rounded-full px-4 py-2 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.02] cursor-pointer"
           >
             Skip Intro
           </motion.button>
